@@ -5,7 +5,11 @@ metadata:
   labels:
     app: nginx
 spec:
+<<<<<<< HEAD
   replicas: 3
+=======
+  replicas: 4
+>>>>>>> kasim
   selector:
     matchLabels:
       app: nginx
