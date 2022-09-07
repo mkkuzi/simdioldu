@@ -21,8 +21,6 @@ jobs:
       id: build-image
       run: |
         echo "deploying"
-    - name: The job has succeeded
-      if: ${{ success() }}   
     - name: Slack Notify
       uses: rtCamp/action-slack-notify@v2.2.0
       env:
