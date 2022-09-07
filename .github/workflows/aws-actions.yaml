@@ -20,9 +20,7 @@ jobs:
     - name: Deploy
       id: build-image
       run: |
-        ehco "deploying" 
-    - name: The job has failed
-      if: ${{ failure() }}   
+        ehco "deploying"  
     - name: Slack Notify
       uses: rtCamp/action-slack-notify@v2.2.0
       env:
