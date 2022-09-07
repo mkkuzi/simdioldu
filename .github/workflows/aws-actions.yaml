@@ -10,7 +10,7 @@ env:
   ECS_CLUSTER: test-kasim
 
 jobs: 
-  job1: 
+  deploy: 
     name: Deploy 
     runs-on: ubuntu-latest
 
@@ -20,9 +20,9 @@ jobs:
     - name: Deploy
       id: build-image
       run: |
-        ehco "deploying" 
+        echo $IMAGE_URL
 
-  job2:
+  slackNotification:
     name: Slack Notification
     runs-on: ubuntu-latest
     steps:
@@ -31,9 +31,9 @@ jobs:
       uses: rtCamp/action-slack-notify@v2
       env:
         SLACK_CHANNEL: general
-        SLACK_COLOR: ${{ job1.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
         SLACK_ICON: https://github.com/rtCamp.png?size=48
-        SLACK_MESSAGE: ${{ job1.status }}
+        SLACK_MESSAGE: ${{ job.status }}
         SLACK_TITLE: Post Title
         SLACK_USERNAME: rtCamp
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}    
