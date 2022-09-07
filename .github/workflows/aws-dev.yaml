@@ -20,7 +20,7 @@ jobs:
     - name: Deploy
       id: build-image
       run: |
-        echo "deploying" 
+        eho "deploying" 
   slack-notify:
     name: slack-notify
     runs-on: ubuntu-latest
