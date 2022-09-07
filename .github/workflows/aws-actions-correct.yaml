@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - "main"
+name: deploy to Amazon-ECS
+
+env: 
+  AWS_REGION: eu-north-1
+  ECR_REPOSITORY: kasim-test
+  ECS_CLUSTER: test-kasim
+
+jobs: 
+  deploy: 
+    name: Deploy 
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Deploy
+      id: build-image
+      run: |
+        echo "deploying"   
