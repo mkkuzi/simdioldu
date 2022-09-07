@@ -21,6 +21,11 @@ jobs:
       id: build-image
       run: |
         ehco "deploying"      
+  slack-notify:
+    name: slack-notify
+    runs-on: ubuntu-latest
+
+    steps: 
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
       env:
