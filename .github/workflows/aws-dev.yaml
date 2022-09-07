@@ -21,10 +21,6 @@ jobs:
       id: build-image
       run: |
         eho "deploying" 
-  slack-notify:
-    name: slack-notify
-    runs-on: ubuntu-latest
-    steps: 
     - name: Send custom JSON data to Slack workflow
       id: slack
       uses: slackapi/slack-github-action@v1.18.0
