@@ -20,7 +20,7 @@ jobs:
     - name: Deploy
       id: build-image
       run: |
-        echo "deploying"      
+        ehco "deploying"      
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
       env:
